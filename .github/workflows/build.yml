@@ -1,0 +1,22 @@
+name: C Program CI
+
+on:
+  push:
+    paths:
+      - '**.c'
+      - '.github/workflows/**'
+  workflow_dispatch:  # 手動実行も可能
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v3
+
+      - name: Cファイルをコンパイル
+        run: gcc -o PrintHello PrintHello.c
+
+      - name: 実行して出力を確認
+        run: ./PrintHello
