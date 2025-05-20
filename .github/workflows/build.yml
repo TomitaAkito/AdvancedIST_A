@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Cファイルをコンパイル
-        run: gcc -o PrintHello PrintHello.c
+        run: gcc -o printHello printHello.c
 
       - name: 実行して出力を確認
-        run: ./PrintHello
+        run: ./printHello
